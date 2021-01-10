@@ -1,0 +1,45 @@
+Express is a back end framework
+
+Benefits:
+    - makes web apps with Node.js much easier
+    - very fast
+    - full control over request and response
+    - most popular Node framework
+    - Works well with JS since its in JS
+
+creating a public forler to store all the html and other filse that \
+    will be returned once requested
+    -> '/' === '/public' and it will by default look for a file named index
+
+Middleware:
+    - middelware are functions that have access to to the
+        request and response obj.
+
+Some basics functions:
+    1) get
+    --> app.get('/', (req, res) => {
+        // Fetch data from DB
+        // Load pages
+        // Return JSON
+        //Full acess to request and response
+    });
+
+Setting params in the url
+    -->  app.get('/:id', ()=>{}))
+        - the ':id" is the parameter thats added to the the url and can 
+            be accessed using req.params.{parameter name} 
+
+
+Using routers
+    --> using routers allows you to keep the code cleaner in the main file
+    --> To use a router:
+        1) create a folder called routs which will contain the url filepath folders (ex /api/members --> routs/api/members.js)
+        2) import express and init router = express.router();
+        3) write the methods (ex get) the same way as using app
+            EX > app.get('/api/members', (req, res) => res.json(members)) --> router.get('/api/members', (req, res) => res.json(members));
+        4) to use the router 
+            --> app.use('/api/members', reqire('./routes/api/members));
+                - when using the router --> app.use ({url route}, {import the router})
+                    + the url rout will be added to the '/' when ran
+                - when creating the router, set the path to '/' and then when you call app.use({place the full rout here}) 
+                    EX > router.get('/:id', (req, res) => res.json(members));

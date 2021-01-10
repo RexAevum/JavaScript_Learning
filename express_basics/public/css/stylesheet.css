@@ -1,0 +1,12 @@
+body{
+    background: gray;
+}
+
+body h1{
+    color: red;
+}
+
+p{
+    color: silver;
+    text-decoration-color: silver;
+}

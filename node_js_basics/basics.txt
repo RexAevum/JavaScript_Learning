@@ -1,0 +1,35 @@
+Great for tasks that are not CPU intesive
+CRUD apps - social networks, chat apps, web apps
+
+Steps to start project:
+
+1) npm init 
+    --> this will create a package node.js file as package.js
+    --> this file will be used once you move to another computer and execute npm install;  
+        to install all dependencies that are needed for the project
+        - npm init
+
+2) npm install -D {lib}
+    --> will add the installed dependencies to the init package.js file
+        - ex. npm isntall uudi
+    --> can also have a devDependency, which is a dependency that is only needed
+        for during development and does not need to be installed for the app to 
+        run
+        - EX. npm install -D nodemon
+            --> this dependency will allow us not to have to restart the server every time
+    --> will also create a package-lock.js that stores all the info needed to download
+        all the necessary dependencies
+
+3) nodemon instead of node
+    --> lets you see the changes of your page without restarting the 
+        server
+    --> if nodemon is installed globaly and not just in the project:
+        - nodemon {js file without extension}
+        EX > nodemon index
+    --> if nodemon is installed only in the project:
+        1) go to package.js
+        2) add a new entry under scripts
+            - "{script key}" : "{command}"
+            EX > "dev" : "nodemon index"
+        3) execute: npm run {script name in scripts}
+            EX > npm run dev
