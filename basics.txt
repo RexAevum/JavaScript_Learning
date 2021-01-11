@@ -1,0 +1,61 @@
+React is a JS lib used to build UI and front end apps. The code runs on the client not the server.
+
+1) To install iton your system - can use the npm call to install it on your systs
+    but a better way is to install react in the app folder using:
+        - npx create-react-app {folder path}
+        EX > npx create-react-app . --> will install app into the current folder
+
+2) React works within only 1 page of index.html, and all updates and actions take place 
+    on the same page, rather than serving several pages to the client
+    - in public/index.html -> id="root" is where all of the output goes
+    - in src/index.js -> the main file of the app
+
+3) Console commands for running app: 
+    - To run server --> npm start 
+
+4) To pass values/classes/objects
+    a) define the state in the App.js App class
+    b) add the class to to the render() return method using < /> notation
+    
+    c) define the prop variable name and assighn 
+        EX > return (
+                <div className="App">
+                    <Todos todos={this.state.todos} /> // this shows what props to pass to what class
+                </div>
+            );
+    
+    d) then to access it in the class
+        - this.props.{variable prop name}
+        EX > this.props.todos;
+    
+    e) to output all items from an array:
+    EX> return (
+            this.props.todos.map(todo => (
+                <h3>{ todo.title }</h3>
+            )) 
+        );
+
+    f) when passing an item, need to pass the unique key as well
+        - 
+        EX> return (
+            this.props.todos.map(todo => (
+                <TodoItem key={todo.id} todo={ todo } />
+            )) 
+        );
+    
+    g) can set propreties based on the passed props, like which are required etc.
+        EX> TodoItem.propTypes = {
+                todo: PropTypes.object.isRequired
+            }
+
+5) Styles
+    a) to style a section directly:
+        EX> <div style={{ backgroundColor: '#f4f4f4'}}>
+    b) can asighn style to an object and then pass it
+        EX> const itemStyle = { backgroundColor: '#f4f4f4' }
+            <div style={itemStyle}>
+
+6) To modify the state, the method has to be in the same file as the state, so you constatnly need to move up 
+    a lvl when trying to do anything with the state
+    - move each level up by adding the methodName={this.props.methodName}
+    - the lowest lvl will use methodName={this.props.methodName}
