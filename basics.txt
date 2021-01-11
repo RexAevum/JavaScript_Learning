@@ -59,3 +59,12 @@ React is a JS lib used to build UI and front end apps. The code runs on the clie
     a lvl when trying to do anything with the state
     - move each level up by adding the methodName={this.props.methodName}
     - the lowest lvl will use methodName={this.props.methodName}
+
+7) React router install
+    --> npm install react-router-dom
+        - will install the react router
+    --> import {BrowserRouterm Route} from 'react-router-dom'
+        - this will allow all of your elements to be renderd in section
+
+8) making a http request
+    --> ntp install axios

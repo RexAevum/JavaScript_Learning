@@ -44,7 +44,9 @@ export class TodoItem extends Component {
 
 // can declare which propTypes are required
 TodoItem.propTypes = {
-    todo: PropTypes.object.isRequired
+    todo: PropTypes.object.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired
 }
 
 const itemStyle = {
